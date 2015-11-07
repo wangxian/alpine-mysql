@@ -6,7 +6,6 @@ VOLUME /app
 ADD startup.sh /startup.sh
 
 RUN apk --update add mysql mysql-client && rm -f /var/cache/apk/* && \
-    mkdir -p /app/mysql && \
     mkdir -p /etc/mysql/conf.d && \
     { \
         echo '[mysqld]'; \
