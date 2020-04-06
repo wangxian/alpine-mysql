@@ -1,0 +1,18 @@
+version: '2'
+services:
+
+  mysql:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: ${IMAGE_NAME}:${ALPINE_VERSION}
+    container_name: ${CONTAINER_NAME}
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      - MYSQL_DATABASE=${MYSQL_DATABASE}
+    volumes:
+      - .:/app
+    ports:
+      - "${HOST_ADDRESS}:3306"
