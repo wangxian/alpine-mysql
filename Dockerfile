@@ -1,5 +1,11 @@
-FROM alpine:latest
+FROM alpine:3.14 as builder
 MAINTAINER WangXian <xian366@126.com>
+
+RUN apk update && apk add tzdata
+
+FROM alpine:3.14
+
+COPY --from=builder /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 WORKDIR /app
 VOLUME /app
