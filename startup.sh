@@ -7,9 +7,9 @@ fi
 if [ -d /app/mysql/data ]; then
   echo "[i] MySQL directory already present, skipping creation"
 else
-  mkdir /app/mysql/data
-  mkdir /app/mysql/binlog
-  echo "[i] MySQL data directory not found, creating initial DBs"
+  mkdir -p /app/mysql/data
+  mkdir -p /app/mysql/log
+  echo "[i] MySQL data directory not found, creating initial databases"
 
   mysql_install_db --user=root > /dev/null
 
