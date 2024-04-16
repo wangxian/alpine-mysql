@@ -19,10 +19,10 @@ docker compose build
 
 ```
 # only root user
-docker run -it --name mysql -p 3306:3306 -v $(pwd):/app -e MYSQL_DATABASE=admin -e MYSQL_ROOT_PASSWORD=s6321..8 wangxian/alpine-mysql
+docker run -it --name mysql -p 3306:3306 -v ~/appdata/mysql:/app/mysql -e MYSQL_DATABASE=admin -e MYSQL_ROOT_PASSWORD=s6321..8 wangxian/alpine-mysql
 
-# has normal user
-docker run -it --name mysql -p 3306:3306 -v $(pwd):/app -e MYSQL_DATABASE=admin -e MYSQL_USER=user -e MYSQL_PASSWORD=user123..8 -e MYSQL_ROOT_PASSWORD=s6321..8 wangxian/alpine-mysql
+# use normal user
+docker run -it --name mysql -p 3306:3306 -v ~/appdata/mysql:/app/mysql -e MYSQL_DATABASE=admin -e MYSQL_USER=user -e MYSQL_PASSWORD=user123..8 -e MYSQL_ROOT_PASSWORD=s6321..8 wangxian/alpine-mysql
 ```
 
 ## Usage (docker-compose)
