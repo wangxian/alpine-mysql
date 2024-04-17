@@ -1,7 +1,7 @@
 # alpine-mysql
-a docker image base on alpine with MySQL/MariaDB
+a very small docker image base on alpine with MySQL/MariaDB
 
-## build image (docker)
+## build local image (docker)
 
 ```
 docker build -t wangxian/alpine-mysql:latest .
